@@ -43,7 +43,7 @@ public class CameraControl : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(mouse.ReadValue<Vector2>().ToString());
+        //Debug.Log(mouse.ReadValue<Vector2>().ToString());
         MouseAiming();
         KeyboardMovement();
     }
