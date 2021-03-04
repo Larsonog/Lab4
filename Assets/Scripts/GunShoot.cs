@@ -9,13 +9,13 @@ public class GunShoot : MonoBehaviour
     public InputAction reloadButton;
     public GameObject bullet;
     public float shootDelay = 4.0f;
-
+    public float bulletForce = 10f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-   
+
     }
     private void OnEnable()
     {
@@ -37,6 +37,7 @@ public class GunShoot : MonoBehaviour
         }
         if (shootButton.triggered)
         {
+            Debug.Log(shootButton.ReadValueAsObject());
             Shoot();
         }
     }
@@ -48,6 +49,7 @@ public class GunShoot : MonoBehaviour
             Debug.Log("Shoot!");
             var newBullet = Instantiate(bullet, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
             newBullet.SetActive(true);
+            newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletForce);
             GameManager.Instance.RemoveAmmo();
         }
         else
