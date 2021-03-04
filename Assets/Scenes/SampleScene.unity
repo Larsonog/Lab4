@@ -503,29 +503,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c01d21e39d646c08ffb8b523be0a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftclick:
-    m_Name: Leftclick
+  shootButton:
+    m_Name: Shoot Button
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d8160273-9760-470b-bd9e-545a4f5d5e9e
+    m_Id: b4917554-918e-49d5-b100-7a2159abe69e
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7948906a-d263-42f6-9662-cabbf8ac8da9
+      m_Id: fd2ec072-7c8b-4712-b765-20387277fe38
       m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Leftclick
+      m_Action: Shoot Button
       m_Flags: 0
     - m_Name: 
-      m_Id: 31f690bf-0f8d-4157-96d2-7cc4c3efb7bd
+      m_Id: 0bec0f61-8849-402b-924d-ae284831220c
       m_Path: <Gamepad>/rightTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Leftclick
+      m_Action: Shoot Button
       m_Flags: 0
   reloadButton:
     m_Name: Reload Button

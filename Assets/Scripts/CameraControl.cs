@@ -14,7 +14,6 @@ public class CameraControl : MonoBehaviour
     public InputAction mouse;
 
 
-
     public float turnSpeed = 2.0f;
     public float mouseTurnSpeed = 1.0f;
 
@@ -43,7 +42,6 @@ public class CameraControl : MonoBehaviour
     }
     void Update()
     {
-        //Debug.Log(mouse.ReadValue<Vector2>().ToString());
         MouseAiming();
         KeyboardMovement();
     }
