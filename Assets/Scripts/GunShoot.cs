@@ -46,8 +46,13 @@ public class GunShoot : MonoBehaviour
         if (GameManager.Instance.CanShoot())
         {
             Debug.Log("Shoot!");
-            var newBullet = Instantiate(bullet);
+            var newBullet = Instantiate(bullet, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            newBullet.SetActive(true);
             GameManager.Instance.RemoveAmmo();
+        }
+        else
+        {
+            Debug.Log("Out of ammo!");
         }
     }
 
