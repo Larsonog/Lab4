@@ -12,7 +12,9 @@ public class CameraControl : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public InputAction mouse;
-    public GameObject bullet;
+
+    public InputAction lockMouse;
+    private bool cameraLocked = true;
 
 
     public float turnSpeed = 2.0f;
@@ -30,6 +32,7 @@ public class CameraControl : MonoBehaviour
         leftStick.Enable();
         rightStick.Enable();
         mouse.Enable();
+        lockMouse.Enable();
 
 
     }
@@ -39,12 +42,14 @@ public class CameraControl : MonoBehaviour
         leftStick.Disable();
         rightStick.Disable();
         mouse.Disable();
+        lockMouse.Disable();
 
     }
     void Update()
     {
         MouseAiming();
         KeyboardMovement();
+        LockMouse();
     }
 
     void MouseAiming()
@@ -94,5 +99,20 @@ public class CameraControl : MonoBehaviour
         }
 
         transform.Translate(dir * moveSpeed * Time.deltaTime);
+    }
+    void LockMouse()
+    {
+        if (lockMouse.triggered)
+        {
+            cameraLocked = !cameraLocked;
+        }
+        if (cameraLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

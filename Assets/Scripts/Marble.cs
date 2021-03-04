@@ -22,9 +22,6 @@ public class Marble : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Marble"))
-        {
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-        }
+        gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 }

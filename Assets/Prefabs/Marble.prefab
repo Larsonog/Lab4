@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9217493164771395965}
   - component: {fileID: 9217493164771395954}
   - component: {fileID: 9217493164771395955}
-  - component: {fileID: 9217493164771395952}
   - component: {fileID: 9217493164771395953}
   - component: {fileID: 8207400618968336510}
+  - component: {fileID: 1312205672423203531}
   m_Layer: 0
   m_Name: Marble
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &9217493164771395952
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9217493164771395958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9217493164771395953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,3 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8aaac004e6d54885a578abccec2105c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 10
+--- !u!135 &1312205672423203531
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217493164771395958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
