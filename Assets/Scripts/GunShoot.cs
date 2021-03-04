@@ -7,6 +7,8 @@ public class GunShoot : MonoBehaviour
 {
     public InputAction shootButton;
     public InputAction reloadButton;
+    public GameObject bullet;
+    public float shootDelay = 4.0f;
 
 
 
@@ -33,7 +35,7 @@ public class GunShoot : MonoBehaviour
         {
             Reload();
         }
-        if (shootButton.ReadValueAsObject() != null)
+        if (shootButton.triggered)
         {
             Shoot();
         }
@@ -41,11 +43,17 @@ public class GunShoot : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Shoot!");
+        if (GameManager.Instance.CanShoot())
+        {
+            Debug.Log("Shoot!");
+            var newBullet = Instantiate(bullet);
+            GameManager.Instance.RemoveAmmo();
+        }
     }
 
     void Reload()
     {
         Debug.Log("Reloading!");
+        GameManager.Instance.ResetAmmo();
     }
 }

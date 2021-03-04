@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     public int maxAmmo=10;
     public int currentAmmo=10;
 
-    public object Instance { get; private set; }
 
     private void Awake()
     {

@@ -12,6 +12,7 @@ public class CameraControl : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public InputAction mouse;
+    public GameObject bullet;
 
 
     public float turnSpeed = 2.0f;
