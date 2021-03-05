@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3168354627775340448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137250658330935451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d2b01a87c115a47af1e8f7fff07a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marble: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6906609207131032076
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +184,14 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1770506440041698820, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
+--- !u!1 &5137250658330935451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1770506440041698819, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
+  m_PrefabInstance: {fileID: 6906609208126281368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5137250658330935455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1770506440041698823, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}

@@ -490,6 +490,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &723892844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5137250657708426665, guid: a2e1df066dfe47947a6a30de8e19e3e6, type: 3}
+  m_PrefabInstance: {fileID: 6906609207116099732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1043200165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1770506440041698823, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
@@ -795,6 +800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 1770506440041698820, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 9217493164771395958, guid: 71d0446f8668643b591c3775acc21ed4, type: 3}
     - target: {fileID: 1770506440041698823, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -852,6 +861,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3168354627775340448, guid: a2e1df066dfe47947a6a30de8e19e3e6, type: 3}
+      propertyPath: marble
+      value: 
+      objectReference: {fileID: 723892844}
+    - target: {fileID: 3168354627775340448, guid: a2e1df066dfe47947a6a30de8e19e3e6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1292616351}
+    - target: {fileID: 5137250657708426668, guid: a2e1df066dfe47947a6a30de8e19e3e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e82b66cb297a8f489e05e5e6d09b968, type: 2}
     - target: {fileID: 6906609207131032072, guid: a2e1df066dfe47947a6a30de8e19e3e6, type: 3}
       propertyPath: m_RootOrder
       value: 5
