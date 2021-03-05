@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d2b01a87c115a47af1e8f7fff07a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marble: {fileID: 0}
+  marble: {fileID: 7632883011983061536}
   player: {fileID: 0}
 --- !u!1 &6906609207131032076
 GameObject:
@@ -195,5 +195,10 @@ GameObject:
 --- !u!4 &5137250658330935455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1770506440041698823, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
+  m_PrefabInstance: {fileID: 6906609208126281368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7632883011983061536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3905824653076210872, guid: 66cad83642f2646978ebb24fbf6826d2, type: 3}
   m_PrefabInstance: {fileID: 6906609208126281368}
   m_PrefabAsset: {fileID: 0}
