@@ -22,12 +22,12 @@ public class DetectCollision : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Marble"))
         {
-            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 5f)
+            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 1f)
             {
-                health -= (int)collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude * 5;
+                health -= (int)collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude;
                 if (tag.Equals("Player"))
                 {
-                    GameManager.Instance.setHealthBarValue(health / 100);
+                    GameManager.Instance.setHealthBarValue((float)health / (float)100);
                 }
             }
         }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int maxAmmo=10;
     public int currentAmmo=10;
 
-    public static Image healthBar;
+    public Image healthBar;
 
 
     private void Awake()
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentAmmo = maxAmmo;
+        setHealthBarValue(1);
     }
 
     // Update is called once per frame
