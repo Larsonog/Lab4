@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marble: {fileID: 7632883011983061536}
-  player: {fileID: 0}
+  player: {fileID: 4298702587647952773, guid: 91b7716da81a6794ea03e36ea3de67f2, type: 3}
 --- !u!1 &6906609207131032076
 GameObject:
   m_ObjectHideFlags: 0

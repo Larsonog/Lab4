@@ -19,7 +19,7 @@ public class EnemyGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (count % 300 == 0)
+        if (count > 150)  
         {
             if (Vector3.Distance(transform.position, player.transform.position) < 15)
             {
@@ -29,6 +29,7 @@ public class EnemyGun : MonoBehaviour
                     newBullet.SetActive(true);
                     newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);
                     ammo--;
+                    count = 0;
                 }
                 else
                 {
@@ -36,6 +37,7 @@ public class EnemyGun : MonoBehaviour
                 }
             }
         }
+       
         count++;
     }
 }
