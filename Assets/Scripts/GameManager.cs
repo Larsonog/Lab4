@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int maxAmmo=10;
     public int currentAmmo=10;
+
+    public static Image healthBar;
 
 
     private void Awake()
@@ -48,5 +51,22 @@ public class GameManager : MonoBehaviour
     public void ResetAmmo()
     {
         currentAmmo = maxAmmo;
+    }
+
+    public void setHealthBarValue(float value)
+    {
+        healthBar.fillAmount=value;
+        if (healthBar.fillAmount < .25f)
+        {
+            healthBar.color = Color.red;
+        }
+        else if (healthBar.fillAmount < .5f)
+        {
+            healthBar.color = Color.yellow;
+        }
+        else
+        {
+            healthBar.color = Color.green;
+        }
     }
 }
