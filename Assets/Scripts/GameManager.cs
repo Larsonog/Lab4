@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int maxAmmo=10;
     public int currentAmmo=10;
+    public int storedAmmo = 0;
 
     public Image healthBar;
 
@@ -50,8 +51,16 @@ public class GameManager : MonoBehaviour
         }
     }
     public void ResetAmmo()
-    {
-        currentAmmo = maxAmmo;
+    {   if (storedAmmo > 9)
+        {
+            currentAmmo = maxAmmo;
+            storedAmmo -= maxAmmo;
+        }
+        else
+        {
+            currentAmmo += storedAmmo;
+            storedAmmo = 0;
+        }
     }
 
     public void setHealthBarValue(float value)
@@ -69,5 +78,11 @@ public class GameManager : MonoBehaviour
         {
             healthBar.color = Color.green;
         }
+    }
+
+    public void addStorage()
+    {
+        Debug.Log(storedAmmo);
+        storedAmmo++;
     }
 }

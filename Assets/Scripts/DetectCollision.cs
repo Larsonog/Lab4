@@ -22,7 +22,7 @@ public class DetectCollision : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Marble"))
         {
-            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 1f)
+            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 7f)
             {
                 health -= (int)collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude;
                 if (tag.Equals("Player"))
@@ -30,6 +30,13 @@ public class DetectCollision : MonoBehaviour
                     GameManager.Instance.setHealthBarValue((float)health / (float)100);
                 }
             }
+            else
+            {
+                if (tag.Equals("Player")){
+                    GameManager.Instance.addStorage();
+                }
+            }
+            Destroy(collider.gameObject);
         }
     }
 }
