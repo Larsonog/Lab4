@@ -37,6 +37,18 @@ public class DetectCollision : MonoBehaviour
                 }
             }
             Destroy(collider.gameObject);
+
+            if (health <= 0)
+            {
+                if (tag.Equals("Enemy"))
+                {
+                    Destroy(gameObject);
+                }
+                else if (tag.Equals("Player"))
+                {
+                    //Do stuff here
+                }
+            }
         }
     }
 }
