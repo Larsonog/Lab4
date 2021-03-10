@@ -12,6 +12,8 @@ public class CameraControl : MonoBehaviour
     public InputAction leftStick;
     public InputAction rightStick;
     public InputAction mouse;
+    public InputAction jumpButton;
+
 
     public InputAction lockMouse;
     private bool cameraLocked = true;
@@ -25,6 +27,8 @@ public class CameraControl : MonoBehaviour
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 90.0f;
     private float rotX;
+    public float jumpForce;
+    public bool jumping = false;
 
     private void OnEnable()
     {
@@ -33,6 +37,8 @@ public class CameraControl : MonoBehaviour
         rightStick.Enable();
         mouse.Enable();
         lockMouse.Enable();
+        jumpButton.Enable();
+
 
 
     }
@@ -43,6 +49,8 @@ public class CameraControl : MonoBehaviour
         rightStick.Disable();
         mouse.Disable();
         lockMouse.Disable();
+        jumpButton.Disable();
+
 
     }
     void Update()
@@ -50,6 +58,7 @@ public class CameraControl : MonoBehaviour
         MouseAiming();
         KeyboardMovement();
         LockMouse();
+        Jump();
     }
 
     void MouseAiming()
@@ -113,6 +122,23 @@ public class CameraControl : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    void Jump()
+    {
+        if(jumpButton.triggered && !jumping)
+        {
+            var body = gameObject.GetComponent<Rigidbody>();
+            body.AddForce(new Vector3(0, jumpForce, 0));
+            jumping = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Floor"))
+        {
+            jumping = false;
         }
     }
 }
