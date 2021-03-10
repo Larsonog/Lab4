@@ -13,7 +13,7 @@ public class EnemyGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         
     }
 
     // Update is called once per frame
@@ -25,6 +25,7 @@ public class EnemyGun : MonoBehaviour
             {
                 if (ammo > 0)
                 {
+                    GetComponent<ParticleSystem>().Play(true);
                     var newBullet = Instantiate(marble, new Vector3(marble.transform.position.x, marble.transform.position.y, marble.transform.position.z), Quaternion.identity);
                     newBullet.SetActive(true);
                     newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600f);

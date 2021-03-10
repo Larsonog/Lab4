@@ -47,6 +47,7 @@ public class GunShoot : MonoBehaviour
         if (GameManager.Instance.CanShoot())
         {
             Debug.Log("Shoot!");
+            GetComponent<ParticleSystem>().Play(true);
             var newBullet = Instantiate(bullet, new Vector3(bullet.transform.position.x, bullet.transform.position.y, bullet.transform.position.z), Quaternion.identity);
             newBullet.SetActive(true);
             newBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletForce);
