@@ -20,5 +20,6 @@ public class EnemyFollow : MonoBehaviour
     {
 
         agent.destination = player.transform.position;
+        transform.LookAt(player.transform);
     }
 }
