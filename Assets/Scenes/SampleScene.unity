@@ -2750,6 +2750,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1292616356}
     m_Modifications:
+    - target: {fileID: 389058874, guid: 21bc0cb8f61b75744a4faa2fb5fcb3cc, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 389058874, guid: 21bc0cb8f61b75744a4faa2fb5fcb3cc, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5667214461916702674, guid: 21bc0cb8f61b75744a4faa2fb5fcb3cc, type: 3}
       propertyPath: m_Name
       value: SciFiHandGun
