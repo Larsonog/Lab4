@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int maxAmmo=10;
-    public int currentAmmo=10;
-    public int storedAmmo = 0;
+    public int maxAmmo;
+    public int currentAmmo;
+    public int storedAmmo;
 
     public Image healthBar;
+    public GameObject canvas;
+    public GameObject events;
+    public GameObject textbox;
 
 
     private void Awake()
@@ -36,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        textbox.GetComponent<TextMeshProUGUI>().text = currentAmmo + "/6\n"+ storedAmmo;
     }
 
     public bool CanShoot()
@@ -51,10 +55,10 @@ public class GameManager : MonoBehaviour
         }
     }
     public void ResetAmmo()
-    {   if (storedAmmo > 9)
+    {   if (storedAmmo > 6)
         {
+            storedAmmo -= maxAmmo - currentAmmo;
             currentAmmo = maxAmmo;
-            storedAmmo -= maxAmmo;
         }
         else
         {
