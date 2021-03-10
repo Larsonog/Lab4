@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 592624111422319700}
   - component: {fileID: 7308457977373166399}
   - component: {fileID: 6216574710168105425}
+  - component: {fileID: 8332033230493813472}
   m_Layer: 0
   m_Name: DoubleGun Enemy
   m_TagString: Enemy
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255f49255ebe3584c97b528c3396cb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 6216574710168105425}
   player: {fileID: 0}
 --- !u!114 &7308457977373166399
 MonoBehaviour:
@@ -149,6 +151,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &8332033230493813472
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592624111422319697}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &3836523705220966547
 MonoBehaviour:
   m_ObjectHideFlags: 0
