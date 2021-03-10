@@ -55,16 +55,21 @@ public class GameManager : MonoBehaviour
         }
     }
     public void ResetAmmo()
-    {   if (storedAmmo > 6)
+    {
+        if (currentAmmo < maxAmmo)
         {
-            storedAmmo -= maxAmmo - currentAmmo;
-            currentAmmo = maxAmmo;
+            if (storedAmmo >= maxAmmo)
+            {
+                storedAmmo -= maxAmmo - currentAmmo;
+                currentAmmo = maxAmmo;
+            }
+            else
+            {
+                currentAmmo += storedAmmo;
+                storedAmmo = 0;
+            }
         }
-        else
-        {
-            currentAmmo += storedAmmo;
-            storedAmmo = 0;
-        }
+       
     }
 
     public void setHealthBarValue(float value)
