@@ -1,24 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public NavMeshAgent agent;
     public GameObject player;
     void Start()
     {
-        
+
+       agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 5)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, (float).03);
-        }
-        transform.LookAt(player.transform);
+
+        agent.destination = player.transform.position;
     }
 }
