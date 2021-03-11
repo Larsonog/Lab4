@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -15,7 +16,16 @@ public class GameManager : MonoBehaviour
     public Image healthBar;
     public GameObject canvas;
     public GameObject events;
-    public GameObject textbox;
+    public GameObject ammoBox;
+    public GameObject crossHair;
+
+
+
+    public TextMeshProUGUI titleText;
+    public GameObject startButton;
+    public GameObject creditsButton;
+
+
 
 
     private void Awake()
@@ -24,10 +34,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(events);
         }
         else
         {
             Destroy(gameObject);
+            Destroy(canvas);
+            Destroy(events);
+
         }
     }
     // Start is called before the first frame update
@@ -40,7 +55,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textbox.GetComponent<TextMeshProUGUI>().text = currentAmmo + "/6\n"+ storedAmmo;
+        ammoBox.GetComponent<TextMeshProUGUI>().text = currentAmmo + "/6\n"+ storedAmmo;
     }
 
     public bool CanShoot()
@@ -93,5 +108,54 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(storedAmmo);
         storedAmmo++;
+    }
+
+    private void enableGunUI()
+    {
+        crossHair.SetActive(true);
+        ammoBox.SetActive(true);
+        healthBar.gameObject.SetActive(true);
+
+    }
+    private void disableGunUI()
+    {
+        crossHair.SetActive(false);
+        ammoBox.SetActive(false);
+        healthBar.gameObject.SetActive(false);
+    }
+
+    private void disableStartUI()
+    {
+        titleText.gameObject.SetActive(false);
+        startButton.SetActive(false);
+        creditsButton.SetActive(false);
+
+    }
+    private void enableStartUI()
+    {
+        titleText.gameObject.SetActive(true);
+        startButton.SetActive(true);
+        creditsButton.SetActive(true);
+
+    }
+    IEnumerator LoadYourAsyncScene(string scene)
+    {
+
+        Debug.Log("Loading " + scene);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+    }
+    public void StartButton()
+    {
+        disableStartUI();
+        enableGunUI();
+        StartCoroutine(LoadYourAsyncScene("Level"));
+
     }
 }

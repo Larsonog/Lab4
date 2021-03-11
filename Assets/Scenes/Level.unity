@@ -2221,7 +2221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &565658144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5009,7 +5009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1992484401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,7 +5028,11 @@ MonoBehaviour:
   healthBar: {fileID: 841717405}
   canvas: {fileID: 565658143}
   events: {fileID: 619106673}
-  textbox: {fileID: 805943134}
+  ammoBox: {fileID: 0}
+  crossHair: {fileID: 0}
+  titleText: {fileID: 0}
+  startButton: {fileID: 0}
+  creditsButton: {fileID: 0}
 --- !u!4 &1992484402
 Transform:
   m_ObjectHideFlags: 0
