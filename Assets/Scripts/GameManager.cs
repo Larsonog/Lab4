@@ -112,6 +112,9 @@ public class GameManager : MonoBehaviour
             UnlockCamera();
             disableGunUI();
             enableStartUI();
+            setHealthBarValue(1);
+            currentAmmo = 6;
+            storedAmmo = 18;
             StartCoroutine(LoadYourAsyncScene("MainMenu"));
         }
     }
