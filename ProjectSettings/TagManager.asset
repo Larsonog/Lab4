@@ -8,6 +8,7 @@ TagManager:
   - Marble
   - Enemy
   - Floor
+  - Triggerdoor
   layers:
   - Default
   - TransparentFX
