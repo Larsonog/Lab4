@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     public GameObject creditsText;
     public GameObject creditsBackButton;
     public bool shouldLockCamera = false;
+    public GameObject howtoplayButton;
+    public GameObject playText;
+    public GameObject playBackButton;
 
 
 
@@ -138,6 +141,7 @@ public class GameManager : MonoBehaviour
         titleText.gameObject.SetActive(false);
         startButton.SetActive(false);
         creditsButton.SetActive(false);
+        howtoplayButton.SetActive(false);
 
     }
     private void enableStartUI()
@@ -145,6 +149,7 @@ public class GameManager : MonoBehaviour
         titleText.gameObject.SetActive(true);
         startButton.SetActive(true);
         creditsButton.SetActive(true);
+        howtoplayButton.SetActive(true);
 
     }
     IEnumerator LoadYourAsyncScene(string scene)
@@ -175,11 +180,24 @@ public class GameManager : MonoBehaviour
         creditsText.SetActive(true);
         creditsBackButton.SetActive(true);
     }
+    public void HowToPlayButton()
+    {
+        disableStartUI();
+        playText.SetActive(true);
+        playBackButton.SetActive(true);
+    }
     public void exitCredits()
     {
         creditsText.SetActive(false);
         creditsBackButton.SetActive(false);
         enableStartUI();
+    }
+    public void exithowto()
+    {
+        playText.SetActive(false);
+        playBackButton.SetActive(false);
+        enableStartUI();
+
     }
     public bool ShouldLockCamera()
     {
