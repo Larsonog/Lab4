@@ -46,6 +46,7 @@ public class GunShoot : MonoBehaviour
     {
         if (GameManager.Instance.CanShoot())
         {
+            GetComponent<AudioSource>().Play();
             Debug.Log("Shoot!");
             GetComponent<ParticleSystem>().Play(true);
             var newBullet = Instantiate(bullet, new Vector3(bullet.transform.position.x, bullet.transform.position.y, bullet.transform.position.z), Quaternion.identity);
