@@ -102,6 +102,12 @@ public class GameManager : MonoBehaviour
         {
             healthBar.color = Color.green;
         }
+        if (value <= 0)
+        {
+            disableGunUI();
+            enableStartUI();
+            StartCoroutine(LoadYourAsyncScene("MainMenu"));
+        }
     }
 
     public void addStorage()
