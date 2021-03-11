@@ -1396,7 +1396,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "How to play:\nTo move use WASD and the space bar to jump \nUse the mouse
-    to look\nShoot marbles by clicking mouse "
+    to look\nShoot marbles by clicking mouse \nPick up marbles for ammo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19be3e963e56f1146a8d0b1afc4a1a26, type: 2}
   m_sharedMaterial: {fileID: -3079608089712128589, guid: 19be3e963e56f1146a8d0b1afc4a1a26, type: 2}

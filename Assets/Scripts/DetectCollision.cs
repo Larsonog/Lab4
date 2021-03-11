@@ -22,7 +22,7 @@ public class DetectCollision : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Marble"))
         {
-            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 7f)
+            if (collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 5f)
             {
                 health -= (int)collider.gameObject.GetComponent<Rigidbody>().velocity.magnitude;
                 if (tag.Equals("Player"))
@@ -43,10 +43,6 @@ public class DetectCollision : MonoBehaviour
                 if (tag.Equals("Enemy"))
                 {
                     Destroy(gameObject);
-                }
-                else if (tag.Equals("Player"))
-                {
-                    //Do stuff here
                 }
             }
         }
