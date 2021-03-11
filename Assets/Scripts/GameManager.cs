@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI titleText;
     public GameObject startButton;
     public GameObject creditsButton;
-
+    public GameObject creditsText;
+    public GameObject creditsBackButton;
+    public bool shouldLockCamera = false;
 
 
 
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
         }
         if (value <= 0)
         {
+            UnlockCamera();
             disableGunUI();
             enableStartUI();
             StartCoroutine(LoadYourAsyncScene("MainMenu"));
@@ -162,6 +165,30 @@ public class GameManager : MonoBehaviour
         disableStartUI();
         enableGunUI();
         StartCoroutine(LoadYourAsyncScene("Level"));
+        shouldLockCamera = true;
+
+    }
+
+    public void CreditsButton()
+    {
+        disableStartUI();
+        creditsText.SetActive(true);
+        creditsBackButton.SetActive(true);
+    }
+    public void exitCredits()
+    {
+        creditsText.SetActive(false);
+        creditsBackButton.SetActive(false);
+        enableStartUI();
+    }
+    public bool ShouldLockCamera()
+    {
+        return shouldLockCamera;
+    }
+    public void UnlockCamera()
+    {
+        shouldLockCamera = false;
+        Cursor.lockState = CursorLockMode.None;
 
     }
 }

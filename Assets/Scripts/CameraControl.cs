@@ -111,17 +111,20 @@ public class CameraControl : MonoBehaviour
     }
     void LockMouse()
     {
-        if (lockMouse.triggered)
+        if (GameManager.Instance.ShouldLockCamera())
         {
-            cameraLocked = !cameraLocked;
-        }
-        if (cameraLocked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
+            if (lockMouse.triggered)
+            {
+                cameraLocked = !cameraLocked;
+            }
+            if (cameraLocked)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
     }
     void Jump()
