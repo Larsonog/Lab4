@@ -19,6 +19,7 @@ public class EnemyGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(player.transform);
         if (count > 150)  
         {
             if (Vector3.Distance(transform.position, player.transform.position) < 15)
