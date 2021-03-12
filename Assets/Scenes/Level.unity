@@ -5335,6 +5335,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Jump Button
       m_Flags: 0
+    - m_Name: 
+      m_Id: 04542608-fd7f-4db0-b2d4-febd9eac5d23
+      m_Path: <XInputController>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Button
+      m_Flags: 0
   lockMouse:
     m_Name: Lock Mouse
     m_Type: 0
