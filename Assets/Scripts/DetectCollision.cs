@@ -48,7 +48,7 @@ public class DetectCollision : MonoBehaviour
         }
         if (collider.gameObject.CompareTag("Triggerdoor"))
         {
-            GameObject.Find("TrapWalls").SetActive(false);
+            GameObject.Find("TrapTriggerWalls").SetActive(false);
         }
     }
 }
