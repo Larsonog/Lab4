@@ -43,6 +43,10 @@ public class DetectCollision : MonoBehaviour
                 if (tag.Equals("Enemy"))
                 {
                     Destroy(gameObject);
+                }else if (tag.Equals("Boss"))
+                {
+                    GameManager.Instance.WinGame();
+                    Destroy(gameObject);
                 }
             }
         }

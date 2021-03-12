@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public GameObject ammoBox;
     public GameObject crossHair;
 
+    public GameObject backgroundCanvas;
+
+
 
 
     public TextMeshProUGUI titleText;
@@ -26,11 +29,13 @@ public class GameManager : MonoBehaviour
     public GameObject creditsButton;
     public GameObject creditsText;
     public GameObject creditsBackButton;
-    public bool shouldLockCamera = false;
+    private bool shouldLockCamera = false;
     public GameObject howtoplayButton;
     public GameObject playText;
     public GameObject playBackButton;
 
+    public GameObject winText;
+    public GameObject winBackButton;
 
 
     private void Awake()
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(backgroundCanvas);
             DontDestroyOnLoad(events);
         }
         else
@@ -54,6 +60,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentAmmo = maxAmmo;
+        storedAmmo = 18;
         setHealthBarValue(1);
     }
 
@@ -153,12 +160,18 @@ public class GameManager : MonoBehaviour
         startButton.SetActive(true);
         creditsButton.SetActive(true);
         howtoplayButton.SetActive(true);
+        backgroundCanvas.SetActive(true);
 
     }
     IEnumerator LoadYourAsyncScene(string scene)
     {
 
         Debug.Log("Loading " + scene);
+        if (scene == "MainMenu")
+        {
+            Start();
+            
+        }
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
 
         // Wait until the asynchronous scene fully loads
@@ -172,8 +185,10 @@ public class GameManager : MonoBehaviour
     {
         disableStartUI();
         enableGunUI();
-        StartCoroutine(LoadYourAsyncScene("Level"));
+        backgroundCanvas.SetActive(false);
         shouldLockCamera = true;
+        StartCoroutine(LoadYourAsyncScene("Level"));
+
 
     }
 
@@ -210,6 +225,25 @@ public class GameManager : MonoBehaviour
     {
         shouldLockCamera = false;
         Cursor.lockState = CursorLockMode.None;
+
+    }
+    public void WinGame()
+    {
+        Debug.Log("Destorying!");
+        disableGunUI();
+        UnlockCamera();
+        backgroundCanvas.SetActive(true);
+        winText.SetActive(true);
+        winBackButton.SetActive(true);
+
+    }
+    public void WinBackButton()
+    {
+        winText.SetActive(false);
+        winBackButton.SetActive(false);
+        enableStartUI();
+        StartCoroutine(LoadYourAsyncScene("MainMenu"));
+
 
     }
 }
